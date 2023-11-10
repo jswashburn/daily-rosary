@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    background-color: azure;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &__site-title {
+        padding-left: 1rem;
+    }
+
+    &__days-list {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 0 1rem;
+
+        &__day {
+            &__link {
+                text-decoration: none;
+                /* visited link */
+                &:visited {
+                    color: green;
+                }
+            }
+        }
+    }
+}
