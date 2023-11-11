@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Packages for the Daily Rosary SPA.",
-  "homepage": "https://github.com/jswashburn/daily-rosary",
+  "homepage": ".",
   "bugs": {
     "url": "https://github.com/jswashburn/daily-rosary/issues"
   },
