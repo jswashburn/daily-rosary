@@ -1,41 +1,30 @@
-import { useEffect, useState } from "react";
-
-function DayOfWeek(props) {
-  const [state, setState] = useState({
-    days: [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ]
-  });
-
-  useEffect(() => {
-    // setState(state => {
-    //   ...state,
-    //   isToday:
-    // })
-  });
-
-  const day = state.days[props.index];
-
-  return <li className={props.isToday ? "isToday" : ""}>{day}</li>;
-}
+import { Route, Routes } from "react-router-dom"
+import Navbar from "./Navbar"
+import Home from "./pages/Home";
+import Monday from "./pages/Monday";
+import Tuesday from "./pages/Tuesday";
+import Wednesday from "./pages/Wednesday";
+import Thursday from "./pages/Thursday";
+import Friday from "./pages/Friday";
+import Saturday from "./pages/Saturday";
+import Sunday from "./pages/Sunday";
 
 export default function App() {
-  const [today, setToday] = useState(null);
-
   return (
     <div className="App">
-      <h1>Daily Rosary {new Date().toLocaleDateString()}</h1>
-      <ul>
-        {
-          [...Array(7).keys()].map(i => <DayOfWeek index={i} />)
-        }
-      </ul>
+      <Navbar />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/monday" element={<Monday />} />
+          <Route path="/tuesday" element={<Tuesday />} />
+          <Route path="/wednesday" element={<Wednesday />} />
+          <Route path="/thursday" element={<Thursday />} />
+          <Route path="/friday" element={<Friday />} />
+          <Route path="/saturday" element={<Saturday />} />
+          <Route path="/sunday" element={<Sunday />} />
+        </Routes>
+      </div>
     </div>
   );
 }
