@@ -23,6 +23,7 @@ export default function App() {
           <Route path="/thursday" element={<Thursday />} />
           <Route path="/friday" element={<Friday />} />
           <Route path="/saturday" element={<Saturday />} />
+          <Route path="/sunday" element={<Sunday />} />
         </Routes>
       </div>
     </div>
