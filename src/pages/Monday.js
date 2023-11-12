@@ -3,8 +3,7 @@ import IntroPrayerSet from "../components/IntroPrayerSet";
 
 export default function Monday() {
     return (
-        <div className="content">
-            <h1>The Joyful Mysteries</h1>
+        <div>
             <IntroPrayerSet />
             <JoyfulMysteries />
         </div>

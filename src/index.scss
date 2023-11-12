@@ -26,7 +26,7 @@
                 align-items: center;
                 padding: 0.25rem;
             }
-            
+
             &--active {
                 background-color: cornflowerblue;
             }
@@ -39,13 +39,10 @@
     }
 }
 
-.body {
+.content {
     display: flex;
     justify-content: center;
     padding-left: 25rem;
     padding-right: 25rem;
     font-size: 170%;
-}
-
-.content {
 }

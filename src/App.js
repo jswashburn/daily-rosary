@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="body">
+      <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/monday" element={<Monday />} />
@@ -25,7 +25,6 @@ export default function App() {
           <Route path="/sunday" element={<Sunday />} />
         </Routes>
       </div>
-      {/* Footer would go here */}
     </div>
   );
 }

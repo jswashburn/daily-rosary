@@ -1,6 +1,6 @@
 export default function Home() {
     return (
-        <div className="content">
+        <div>
             <h1>Welcome to Daily Rosary!</h1>
             <h2>About this project</h2>
             <p>
