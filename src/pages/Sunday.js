@@ -1,7 +1,11 @@
+import IntroPrayerSet from "../components/IntroPrayerSet"
+import GloriousMysteries from "../components/GloriousMysteries"
+
 export default function Sunday() {
     return (
         <div>
-            <h1>Sunday</h1>
+            <IntroPrayerSet />
+            <GloriousMysteries />
         </div>
     )
 }
