@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
+$font-stack: 'Playfair Display', serif;
+
 .navbar {
     display: flex;
     background-color: azure;
@@ -39,10 +42,37 @@
     }
 }
 
-.content {
+.body {
     display: flex;
-    justify-content: center;
-    padding-left: 25rem;
-    padding-right: 25rem;
-    font-size: 170%;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+}
+
+.reading-style-button {
+    background-color: gray;
+    &-right {
+        width: 50%;
+    }
+
+    &-left {
+        width: 50%;
+    }
+}
+
+.content {
+    background-color: aqua;
+    width: 75%;
+
+    font-family: $font-stack;
+    
+    &__section {
+        text-align: justify;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+
+        &__title {
+            font-style: italic;
+            font-weight: bold;
+        }
+    }
 }

@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="content">
+      <div className="body">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/monday" element={<Monday />} />
