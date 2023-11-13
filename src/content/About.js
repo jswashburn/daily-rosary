@@ -1,4 +1,4 @@
-export default function Home() {
+export default function About() {
     return (
         <div className="content">
             <h1>Welcome to Daily Rosary!</h1>

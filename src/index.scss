@@ -2,8 +2,10 @@
 $font-stack: 'Playfair Display', serif;
 
 .navbar {
+    font-family: $font-stack;
+    
     display: flex;
-    background-color: azure;
+    background-color: rgb(28, 158, 158);
     justify-content: space-between;
     align-items: center;
 
@@ -43,25 +45,14 @@ $font-stack: 'Playfair Display', serif;
 }
 
 .body {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: aliceblue;
 }
 
-.reading-style-button {
-    background-color: gray;
-    &-right {
-        width: 50%;
-    }
-
-    &-left {
-        width: 50%;
-    }
-}
-
+// Grid Item in body
 .content {
-    background-color: aqua;
-    width: 75%;
+    grid-column-start: 2;
 
     font-family: $font-stack;
     
