@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
+$font-stack: 'Playfair Display', serif;
+
 .navbar {
+    font-family: $font-stack;
+    
     display: flex;
-    background-color: azure;
+    background-color: rgb(28, 158, 158);
     justify-content: space-between;
     align-items: center;
 
@@ -26,7 +31,7 @@
                 align-items: center;
                 padding: 0.25rem;
             }
-            
+
             &--active {
                 background-color: cornflowerblue;
             }
@@ -39,8 +44,26 @@
     }
 }
 
+.body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: aliceblue;
+}
+
+// Grid Item in body
 .content {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
+    grid-column-start: 2;
+
+    font-family: $font-stack;
+    
+    &__section {
+        text-align: justify;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+
+        &__title {
+            font-style: italic;
+            font-weight: bold;
+        }
+    }
 }
