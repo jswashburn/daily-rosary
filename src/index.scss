@@ -1,53 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
 $font-stack: 'Playfair Display', serif;
 
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.App {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
 .navbar {
     font-family: $font-stack;
-    
-    display: flex;
-    background-color: rgb(28, 158, 158);
     justify-content: space-between;
-    align-items: center;
+    display: flex;
 
-    &__site-title, &__site-title:visited {
-        padding: 1rem;
-        font-size: 2rem;
-        text-decoration: none;
-        color: black;
+    & ul {
+        display: flex;
+        gap: 2em;
     }
 
-    &__days-list {
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-        padding: 0 1rem;
+    &__title {
+        text-decoration: none;
+        font-size: 3rem;
+    }
 
-        &__day {
-            &__link, &__link:visited {
-                text-decoration: none;
-                color: black;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                padding: 0.25rem;
-            }
-
-            &--active {
-                background-color: cornflowerblue;
-            }
-
-            background-color: azure;
-            &:hover {
-                filter: brightness(80%);
-            }
-        }
+    &__item {
+        text-decoration: none;
+        font-size: 2.5rem;
     }
 }
 
 .body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: aliceblue;
 }
 
 // Grid Item in body
@@ -66,4 +56,16 @@ $font-stack: 'Playfair Display', serif;
             font-weight: bold;
         }
     }
+}
+
+.footer {
+    background-color: rgb(55, 36, 11);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    padding: 1em;
+    font-family: $font-stack;
+    font-size: large;
 }

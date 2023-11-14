@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Navbar from "./Navbar"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import Navbar from "./components/Navbar"
 import About from "./content/About";
 import RosaryDay from "./components/RosaryDay";
 import GloriousMysteries from "./content/GloriousMysteries";
@@ -54,6 +56,16 @@ export default function App() {
           <Route path="/friday" element={<RosaryDay content={<SorrowfulMysteries />} />} />
           <Route path="/saturday" element={<RosaryDay content={<JoyfulMysteries />} />} />
         </Routes>
+      </div>
+      <div className="footer">
+        <div>
+          <h1>Jeffrey Washburn</h1>
+          <span>jeffrey.s.washburn@outlook.com</span>
+        </div>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/jeffrey-washburn" rel="noreferrer" target="_blank">LinkedIn <FontAwesomeIcon icon={faLinkedin}/></a></li>
+          <li><a href="https://github.com/jswashburn/daily-rosary" rel="noreferrer" target="_blank">Github <FontAwesomeIcon icon={faGithub}/></a></li>
+        </ul>
       </div>
     </div>
   );
