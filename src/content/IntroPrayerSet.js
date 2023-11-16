@@ -2,7 +2,7 @@ import ContentSection from "../components/ContentSection";
 
 export default function IntroPrayerSet() {
   return (
-    <div>
+    <>
       <ContentSection title="The Apostles Creed">
         I believe in God, the Father almighty, Creator of heaven and earth, and
         in Jesus Christ, his only Son, our Lord, who was conceived by the Holy
@@ -33,6 +33,6 @@ export default function IntroPrayerSet() {
         Glory be to the Father and to the Son and to the Holy Spirit, as it was
         in the beginning is now, and ever shall be world without end. Amen.
       </ContentSection>
-    </div>
+    </>
   );
 }

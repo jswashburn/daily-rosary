@@ -15,3 +15,6 @@ React project for praying a Rosary every day. For learning purposes 🙂.
 
 ### Azure
 - Connect SPA to an azure database: https://learn.microsoft.com/en-us/azure/static-web-apps/database-configuration
+
+### Design
+- Do this: https://www.youtube.com/watch?v=wIuVvCuiJhU

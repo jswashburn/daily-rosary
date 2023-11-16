@@ -1,71 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
-$font-stack: 'Playfair Display', serif;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&family=Playfair+Display:ital@0;1&display=swap");
 
-a, a:visited {
-    text-decoration: none;
-    color: inherit;
+$font-stack-content: "Playfair Display", serif;
+$font-stack-controls: "Noto Sans", sans-serif;
+
+$colors-black: rgb(29, 28, 27);
+$colors-font-light: white;
+$colors-font-dark: black;
+
+$colors-font-dark-glorious: rgb(162, 146, 54);
+$colors-background-glorious: rgb(206, 227, 227);
+
+$colors-font-dark-luminous: rgb(129, 226, 226);
+$colors-font-dark-sorrowful: rgb(172, 16, 47);
+$colors-font-dark-joyful: rgb(99, 187, 99);
+
+// hide the scrollbar but keep the functionality
+// body {
+//     /* Hide scrollbar for IE, Edge and Firefox */
+//     -ms-overflow-style: none; /* IE and Edge */
+//     scrollbar-width: none; /* Firefox */
+
+//     /* Hide scrollbar for Chrome, Safari and Opera */
+//     &::-webkit-scrollbar {
+//       display: none;
+//     }
+// }
+
+a,
+a:visited {
+  text-decoration: none;
 }
 
 .App {
-    min-height: 100vh;
-    min-height: 100dvh;
-
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-.navbar {
-    font-family: $font-stack;
-    justify-content: space-between;
-    display: flex;
-
-    & ul {
-        display: flex;
-        gap: 2em;
-    }
-
-    &__title {
-        text-decoration: none;
-        font-size: 3rem;
-    }
-
-    &__item {
-        text-decoration: none;
-        font-size: 2.5rem;
-    }
-}
-
-.body {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-// Grid Item in body
+.navbar,
+.footer,
 .content {
-    grid-column-start: 2;
+  display: flex;
+}
 
-    font-family: $font-stack;
-    
-    &__section {
-        text-align: justify;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-
-        &__title {
-            font-style: italic;
-            font-weight: bold;
-        }
-    }
+.navbar,
+.footer {
+  align-items: center;
+  font-family: $font-stack-controls;
 }
 
 .footer {
-    background-color: rgb(55, 36, 11);
-    color: white;
+  justify-content: center;
+  padding: 1em;
+}
+
+.navbar {
+  justify-content: space-between;
+  padding: 2em;
+
+  & ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3em;
-    padding: 1em;
-    font-family: $font-stack;
-    font-size: large;
+    gap: 2em;
+  }
+
+  &__title,
+  &__item {
+    color: inherit;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__item {
+    font-size: 2rem;
+
+    &--active {
+        text-decoration: underline;
+    }
+  }
+}
+
+.content {
+  font-family: $font-stack-content;
+  flex-direction: column;
+  place-items: center;
+}
+
+.clr {
+  &--basic {
+    color: $colors-font-light;
+    background-color: $colors-black;
+  }
+  &--glorious {
+    color: $colors-font-dark-glorious;
+    background-color: $colors-background-glorious;
+  }
+}
+
+.navbar__item {
+    &--thursday {
+        color: gold;
+    }
 }
