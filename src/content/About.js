@@ -28,6 +28,10 @@ export default function About() {
         remember which mysteries are for the current day, I have set this site
         up to automatically load the days mysteries.
       </ContentSection>
+
+      <ContentSection title="Intercession">
+        Todo: write explanation of intercession of the saints.
+      </ContentSection>
     </div>
   );
 }
