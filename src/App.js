@@ -4,7 +4,7 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { getTodaysRosaryDay } from "./utils/helpers";
 import Navbar from "./components/Navbar";
 import About from "./content/About";
-import GloriousMysteries from "./content/GloriousMysteries2";
+import GloriousMysteries from "./content/GloriousMysteries";
 import LuminousMysteries from "./content/LuminousMysteries";
 import JoyfulMysteries from "./content/JoyfulMysteries";
 import SorrowfulMysteries from "./content/SorrowfulMysteries";

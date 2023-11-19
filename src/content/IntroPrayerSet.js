@@ -1,10 +1,6 @@
-import ContentSection from "../components/ContentSection";
-
 export default function IntroPrayerSet() {
   return (
     <>
-      <ContentSection title="Opening Prayers">
-
         <h3>The Apostles Creed</h3>
         <span className="content__section__description">Performed while holding the crucifix.</span>
         <p>
@@ -46,7 +42,6 @@ export default function IntroPrayerSet() {
           was in the beginning is now, and ever shall be world without end.
           Amen.
         </p>
-      </ContentSection>
     </>
   );
 }
