@@ -107,16 +107,19 @@ a:visited {
 }
 
 .content {
-  padding-top: 10em;
+  padding-top: 8em;
   font-family: $font-stack-content;
   flex-direction: column;
   place-items: center;
 
+  h1 {
+    padding-top: 5em;
+  }
 
   &__section {
     scroll-snap-align: center;
     &--top {
-        padding-top: 0em;
+        padding-top: 5em;
         padding-bottom: 10em;
     }
     width: 50em;
