@@ -8,12 +8,12 @@ export default function SorrowfulMysteries() {
       theme="clr--sorrowful"
       sections={[
         {
-          position: 0,
+          position: 1,
           content: <IntroPrayerSet />,
           className: "content__section--top",
         },
         {
-          position: 1,
+          position: 2,
           content: (
             <>
               <h2>The Agony in the Garden</h2>
@@ -28,7 +28,7 @@ export default function SorrowfulMysteries() {
           ),
         },
         {
-          position: 2,
+          position: 3,
           content: (
             <>
               <h2>The Scourging at the Pillar</h2>
@@ -43,7 +43,7 @@ export default function SorrowfulMysteries() {
           ),
         },
         {
-          position: 3,
+          position: 4,
           content: (
             <>
               <h2>The Crowning with Thorns</h2>
@@ -58,7 +58,7 @@ export default function SorrowfulMysteries() {
           ),
         },
         {
-          position: 4,
+          position: 5,
           content: (
             <>
               <h2>The Carrying of the Cross</h2>
@@ -72,7 +72,7 @@ export default function SorrowfulMysteries() {
           ),
         },
         {
-          position: 5,
+          position: 6,
           content: (
             <>
               <h2>The Crucifixion</h2>

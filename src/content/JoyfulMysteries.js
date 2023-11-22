@@ -8,12 +8,12 @@ export default function JoyfulMysteries() {
       theme="clr--joyful"
       sections={[
         {
-          position: 0,
+          position: 1,
           content: <IntroPrayerSet />,
           className: "content__section--top",
         },
         {
-          position: 1,
+          position: 2,
           content: (
             <>
               <h2>The Annunciation of Our Lord</h2>
@@ -43,7 +43,7 @@ export default function JoyfulMysteries() {
           ),
         },
         {
-          position: 2,
+          position: 3,
           content: (
             <>
               <h2>The Visitation</h2>
@@ -67,7 +67,7 @@ export default function JoyfulMysteries() {
           ),
         },
         {
-          position: 3,
+          position: 4,
           content: (
             <>
               <h2>The Nativity of Jesus</h2>
@@ -94,7 +94,7 @@ export default function JoyfulMysteries() {
           ),
         },
         {
-          position: 4,
+          position: 5,
           content: (
             <>
               <h2>The Presentation in the Temple</h2>
@@ -119,7 +119,7 @@ export default function JoyfulMysteries() {
           ),
         },
         {
-          position: 5,
+          position: 6,
           content: (
             <>
               <h2>The Finding in the Temple</h2>

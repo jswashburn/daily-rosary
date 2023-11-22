@@ -8,12 +8,12 @@ export default function LuminousMysteries() {
       theme="clr--luminous"
       sections={[
         {
-          position: 0,
+          position: 1,
           content: <IntroPrayerSet />,
           className: "content__section--top",
         },
         {
-          position: 1,
+          position: 2,
           content: (
             <>
               <h2>Baptism in the Jordan</h2>
@@ -28,7 +28,7 @@ export default function LuminousMysteries() {
           ),
         },
         {
-          position: 2,
+          position: 3,
           content: (
             <>
               <h2>The Wedding Feast at Cana</h2>
@@ -41,7 +41,7 @@ export default function LuminousMysteries() {
           ),
         },
         {
-          position: 3,
+          position: 4,
           content: (
             <>
               <h2>Proclamation of the Kingdom of God</h2>
@@ -54,7 +54,7 @@ export default function LuminousMysteries() {
           ),
         },
         {
-          position: 4,
+          position: 5,
           content: (
             <>
               <h2>Transfiguration</h2>
@@ -68,7 +68,7 @@ export default function LuminousMysteries() {
           ),
         },
         {
-          position: 5,
+          position: 6,
           content: (
             <>
               <h2>Institution of the Eucharist</h2>

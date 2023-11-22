@@ -1,7 +1,7 @@
 export default function IntroPrayerSet() {
   return (
     <>
-        <h3>The Apostles Creed</h3>
+        <h2>The Apostles Creed</h2>
         <span className="content__section__description">Performed while holding the crucifix.</span>
         <p>
           I believe in God, the Father almighty, Creator of heaven and earth,
@@ -16,7 +16,7 @@ export default function IntroPrayerSet() {
           Amen.
         </p>
 
-        <h3>Our Father</h3>
+        <h2>Our Father</h2>
         <span className="content__section__description">Performed on the first bead.</span>
         <p>
           Our Father, who art in heaven, hallowed be thy name; thy kingdom come,
@@ -26,7 +26,7 @@ export default function IntroPrayerSet() {
           from evil. Amen.
         </p>
 
-        <h3>Hail Mary</h3>
+        <h2>Hail Mary</h2>
         <span className="content__section__description">Repeat on the next three beads. Ask for Mary's intercession, for an increase of faith, hope, and charity, as well as any intentions you may have.</span>
         <p>
           Hail, Mary, full of grace, the Lord is with thee. Blessed art thou
@@ -35,7 +35,7 @@ export default function IntroPrayerSet() {
           Amen.
         </p>
 
-        <h3>Glory Be (Doxology)</h3>
+        <h2>Glory Be (Doxology)</h2>
         <span className="content__section__description">Repeat before the next large bead.</span>
         <p>
           Glory be to the Father and to the Son and to the Holy Spirit, as it

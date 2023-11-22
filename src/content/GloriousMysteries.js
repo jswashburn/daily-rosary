@@ -8,12 +8,11 @@ export default function GloriousMysteries() {
       theme="clr--glorious"
       sections={[
         {
-          position: 0,
-          content: <IntroPrayerSet />,
-          className: "content__section--top"
+          position: 1,
+          content: <IntroPrayerSet />
         },
         {
-          position: 1,
+          position: 2,
           content: (
             <>
               <h2>The Ressurrection</h2>
@@ -26,7 +25,7 @@ export default function GloriousMysteries() {
           ),
         },
         {
-          position: 2,
+          position: 3,
           content: (
             <>
               <h2>The Ascension</h2>
@@ -39,7 +38,7 @@ export default function GloriousMysteries() {
           ),
         },
         {
-          position: 3,
+          position: 4,
           content: (
             <>
               <h2>Pentecost</h2>
@@ -52,7 +51,7 @@ export default function GloriousMysteries() {
           ),
         },
         {
-          position: 4,
+          position: 5,
           content: (
             <>
               <h2>The Assumption</h2>
@@ -65,7 +64,7 @@ export default function GloriousMysteries() {
           ),
         },
         {
-          position: 5,
+          position: 6,
           content: (
             <>
               <h2>The Coronation of Mary</h2>

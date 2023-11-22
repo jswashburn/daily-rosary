@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/friday" element={<SorrowfulMysteries />} />
         <Route path="/saturday" element={<JoyfulMysteries />} />
       </Routes>
-      <footer className="footer clr--basic">
+      <footer>
         <div>
           <h1>Jeffrey Washburn</h1>
           <span>jeffrey.s.washburn@outlook.com</span>

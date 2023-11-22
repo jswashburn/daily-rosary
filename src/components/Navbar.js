@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="navbar clr--basic">
+    <div className="navbar">
       <Link to="/" className="navbar__title">
         Todays Daily Rosary
       </Link>

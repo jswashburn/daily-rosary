@@ -5,7 +5,8 @@ import ContentSection from "./ContentSection";
 
 export default function MysteryGroup(props) {
   const sectionsRef = useRef(null);
-  const [currSection, setCurrSection] = useState(0);
+  const titleRef = useRef(null);
+  const [currSection, setCurrSection] = useState(undefined);
   const [sections] = useState(
     props.sections.map((section, index) => {
       return (
@@ -14,14 +15,15 @@ export default function MysteryGroup(props) {
             const map = getMap();
             // node refers to the node referred by ContentSection
             if (node) {
+              // attach the sectionPosition to the DOM node itself
+              // this way it can be read by intersection observer during useEffect
               node.sectionPosition = section.position;
-              map.set(section.position, {node: node});
+              map.set(section.position, { node: node });
             } else {
               map.delete(section.position);
             }
           }}
           key={index}
-          className={section.className}
         >
           {section.content}
         </ContentSection>
@@ -32,7 +34,6 @@ export default function MysteryGroup(props) {
   const scrollTo = (position) => {
     const map = getMap();
     const section = map.get(position).node;
-    console.log("Scrolling to " + position);
     section.scrollIntoView({
       behavior: "smooth",
       block: "center",
@@ -47,56 +48,69 @@ export default function MysteryGroup(props) {
   };
 
   useEffect(() => {
-    const map = getMap();    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setCurrSection(entry.target.sectionPosition);
-        }
-      });
-    }, {threshold: 1});
+    // Set up intersection observer for each content section
+    // This sets the current section showing on the screen
+    // which will be used to update the progress bar
+    const map = getMap();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // The title node will not have a sectionPosition attached so it will be undefined
+            setCurrSection(entry.target.sectionPosition);
+          }
+        });
+      },
+      { threshold: 0.75 }
+    );
 
+    // Also observe the content title
+    // Save the ref.current to a variable, and reuse it in
+    // the cleanup function below, since the value may change
+    // between startup and unmount
+    const titleRefCurrent = titleRef.current;
+    observer.observe(titleRefCurrent);
+
+    // Observe each DOM node saved in the sections map.
     map.forEach((value, index, map) => {
       observer.observe(value.node);
     });
 
+    // Clean up the observer so that bugs don't occur between
+    // page changes
     return () => {
+      observer.unobserve(titleRefCurrent);
       map.forEach((value, index, map) => {
         observer.unobserve(value.node);
-        observer.disconnect();
       });
-    }
+      observer.disconnect();
+    };
   }, []);
-
-  const getProgressBarWidth = () => {
-    const p = ((currSection + 1) / (sections.length)) * 100
-    return p + '%'
-  }
-
-  const progressBarStyle = {
-    width: getProgressBarWidth(),
-    height: '2em',
-    backgroundColor: 'blue',
-    position: 'sticky',
-    top: '8em',
-    alignSelf: 'start',
-    transitionProperty: 'width',
-    transition: '150ms'
-  }
 
   return (
     <>
+      <div className={`progress-bar__buttons`}>
+        <div
+          className={`progress-bar__progress progress-bar__progress--${currSection} ${props.theme}`}
+        ></div>
+        {sections.map((s, i) => {
+          const p = i + 1; // since index starts with 0, but position starts with 1
+          return (
+            <button
+              style={{
+                visibility: currSection === undefined ? "hidden" : "visible",
+              }}
+              className={"progress-bar__button--" + p}
+              key={p}
+              onClick={() => scrollTo(p)}
+            >
+              {p}
+            </button>
+          );
+        })}
+      </div>
       <div className={"content " + props.theme}>
-        <div style={progressBarStyle}>{currSection}</div>
-        <h1>{props.title}</h1>
-        {/* <nav>
-          <button onClick={() => scrollTo(1)}>Skip to Mysteries</button>
-          <button onClick={() => scrollTo(1)}>First Mystery</button>
-          <button onClick={() => scrollTo(2)}>Second Mystery</button>
-          <button onClick={() => scrollTo(3)}>Third Mystery</button>
-          <button onClick={() => scrollTo(4)}>Fourth Mystery</button>
-          <button onClick={() => scrollTo(5)}>Fifth Mystery</button>
-        </nav> */}
+        <h1 ref={titleRef}>{props.title}</h1>
         {sections}
       </div>
     </>
