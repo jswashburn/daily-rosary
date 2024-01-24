@@ -100,16 +100,15 @@ export default function MysteryGroup(props) {
               style={{
                 visibility: currSection === undefined ? "hidden" : "visible",
               }}
-              className={"progress-bar__button--" + p}
+              className={`progress-bar__button progress-bar__button--${p} ${props.theme}`}
               key={p}
               onClick={() => scrollTo(p)}
             >
-              {p}
             </button>
           );
         })}
       </div>
-      <div className={"content " + props.theme}>
+      <div className={"content"}>
         <h1 ref={titleRef}>{props.title}</h1>
         {sections}
       </div>

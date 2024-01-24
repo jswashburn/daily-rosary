@@ -136,6 +136,18 @@ $_section-count: 6;
   justify-content: space-around;
 }
 
+.progress-bar__button {
+  border-radius: 50%;
+  margin-top: .5em;
+  border-style: solid;
+  margin-bottom: .5em;
+  padding: 1em;
+
+  box-shadow: 9px 3px 12px -3px rgba(0,0,0,0.52);
+  -webkit-box-shadow: 9px 3px 12px -3px rgba(0,0,0,0.52);
+  -moz-box-shadow: 9px 3px 12px -3px rgba(0,0,0,0.52);
+}
+
 .progress-bar__progress {
   // place under buttons
   z-index: -1;
@@ -149,24 +161,23 @@ $_section-count: 6;
   transition-timing-function: ease-out;
 
   @for $i from 1 through $_section-count {
-    $_progress-percentage: math.percentage(math.div($i, $_section-count));
     &--#{$i} {
-      &.clr--glorious {
-        width: $_progress-percentage;
-        background-color: glorious.$accent;
-      }
-      &.clr--luminous {
-        width: $_progress-percentage;
-        background-color: luminous.$accent;
-      }
-      &.clr--sorrowful {
-        width: $_progress-percentage;
-        background-color: sorrowful.$accent;
-      }
-      &.clr--joyful {
-        width: $_progress-percentage;
-        background-color: joyful.$accent;
-      }
+      width: math.percentage(math.div($i, $_section-count));
     }
+  }
+}
+
+.clr {
+  &--joyful {
+    background-color: joyful.$accent;
+  }
+  &--sorrowful {
+    background-color: sorrowful.$accent;
+  }
+  &--luminous {
+    background-color: luminous.$accent;
+  }
+  &--glorious {
+    background-color: glorious.$accent;
   }
 }

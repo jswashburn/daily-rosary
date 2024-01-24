@@ -29,9 +29,9 @@ export default function About() {
         up to automatically load the days mysteries.
       </ContentSection>
 
-      <ContentSection title="Intercession">
+      {/* <ContentSection title="Intercession">
         Todo: write explanation of intercession of the saints.
-      </ContentSection>
+      </ContentSection> */}
     </div>
   );
 }
