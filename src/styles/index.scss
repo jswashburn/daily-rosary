@@ -1,0 +1,183 @@
+@use "sass:math";
+@use "./variables/colors/glorious";
+@use "./variables/colors/luminous";
+@use "./variables/colors/sorrowful";
+@use "./variables/colors/joyful";
+@use "./variables/colors/standard";
+@use "./variables/fonts/fonts";
+
+// hide the scrollbar but keep the functionality
+body,
+.content {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html {
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y proximity;
+  scroll-snap-stop: always;
+}
+
+.App {
+  // https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100
+  // https://www.youtube.com/shorts/97rnXn7Ks3Y
+  min-height: 100vh;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+.navbar,
+footer,
+.content {
+  display: flex;
+}
+
+.navbar,
+footer {
+  font-family: fonts.$serif;
+  background-color: standard.$black;
+  color: standard.$white;
+  align-items: center;
+  position: sticky;
+  width: 100%;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  padding: 1em;
+  margin-top: auto;
+}
+
+.navbar {
+  top: 0;
+  justify-content: space-between;
+  padding: 1em;
+
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+
+  &__title,
+  &__item {
+    color: inherit;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__item {
+    font-size: 2rem;
+
+    &--active {
+      text-decoration: underline;
+    }
+
+    &--sunday,
+    &--wednesday {
+      color: glorious.$accent;
+    }
+    &--monday,
+    &--saturday {
+      color: joyful.$accent;
+    }
+    &--tuesday,
+    &--friday {
+      color: sorrowful.$accent;
+    }
+    &--thursday {
+      color: luminous.$accent;
+    }
+  }
+}
+
+.content {
+  font-family: fonts.$sans-serif;
+  flex-direction: column;
+  place-items: center;
+
+  h1 {
+    padding: 15em;
+  }
+
+  &__section {
+    scroll-snap-align: center;
+    width: 50em;
+    padding-top: 25em;
+    padding-bottom: 25em;
+    &__description {
+      font-style: italic;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+$_section-count: 6;
+.progress-bar__buttons {
+  position: sticky;
+  top: 6em;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.progress-bar__button {
+  border-radius: 50%;
+  margin-top: .5em;
+  border-style: solid;
+  margin-bottom: .5em;
+  padding: 1em;
+
+  box-shadow: 9px 3px 12px -3px rgba(0,0,0,0.52);
+  -webkit-box-shadow: 9px 3px 12px -3px rgba(0,0,0,0.52);
+  -moz-box-shadow: 9px 3px 12px -3px rgba(0,0,0,0.52);
+}
+
+.progress-bar__progress {
+  // place under buttons
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  transition-property: width;
+  transition: 300ms;
+  transition-timing-function: ease-out;
+
+  @for $i from 1 through $_section-count {
+    &--#{$i} {
+      width: math.percentage(math.div($i, $_section-count));
+    }
+  }
+}
+
+.clr {
+  &--joyful {
+    background-color: joyful.$accent;
+  }
+  &--sorrowful {
+    background-color: sorrowful.$accent;
+  }
+  &--luminous {
+    background-color: luminous.$accent;
+  }
+  &--glorious {
+    background-color: glorious.$accent;
+  }
+}

@@ -1,10 +1,11 @@
-export default function ContentSection({children, ...props}) {
-    return (
-        <div className="content__section">
-            <h2 className="content__section__title">{props.title}</h2>
-            <p>
-                {children}
-            </p>
-        </div>
-    );
-}
+import { forwardRef } from "react";
+
+const ContentSection = forwardRef(({ children, ...props }, ref) => {
+  return (
+    <div ref={ref} className={"content__section " + props.className}>
+      {children}
+    </div>
+  );
+});
+
+export default ContentSection;
